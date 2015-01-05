@@ -3,11 +3,10 @@
  */
 package com.microtripit.mandrillapp.lutung.model;
 
+import org.apache.http.client.methods.HttpRequestBase;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
-
-import org.apache.http.client.methods.HttpRequestBase;
 
 /**
  * 
@@ -15,6 +14,7 @@ import org.apache.http.client.methods.HttpRequestBase;
  * @since Jan 7, 2013
  * @param <V> The type that response-data/ response-content is parsed to.
  */
+@Deprecated
 public interface RequestModel<V> {
 	
 	/**
