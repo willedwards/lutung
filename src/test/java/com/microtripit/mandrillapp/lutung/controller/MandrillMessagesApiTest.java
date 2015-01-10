@@ -8,15 +8,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
-import com.microtripit.mandrillapp.lutung.view.MandrillMessageContent;
 import junit.framework.Assert;
 
 import org.junit.Assume;
 import org.junit.Test;
 
+import com.google.api.client.util.DateTime;
 import com.microtripit.mandrillapp.lutung.MandrillTestCase;
 import com.microtripit.mandrillapp.lutung.model.MandrillApiError;
 import com.microtripit.mandrillapp.lutung.view.MandrillMessage;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageContent;
 import com.microtripit.mandrillapp.lutung.view.MandrillMessageInfo;
 import com.microtripit.mandrillapp.lutung.view.MandrillSearchMessageParams;
 
@@ -88,8 +89,11 @@ public final class MandrillMessagesApiTest extends MandrillTestCase {
         Calendar cal = Calendar.getInstance();
         cal.add( Calendar.HOUR, -6 );
         MandrillSearchMessageParams search = new MandrillSearchMessageParams();
-        search.setDateFrom( cal.getTime() );
-        search.setDateTo( new Date() );
+        //
+        //Nando: convert to DateTime, so google-http-java-client.JsonGenerator  knows how to serialize them  
+        //
+        search.setDateFrom(new DateTime(cal.getTime()));
+        search.setDateTo(new DateTime(new Date()));
         MandrillMessageInfo[] messages = mandrillApi.messages().search( search );
         Assume.assumeNotNull( messages );
         Assume.assumeTrue( messages.length > 0 );
