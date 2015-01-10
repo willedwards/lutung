@@ -48,8 +48,8 @@ final class MandrillUtil {
                                             Class<OUT> responseType) throws MandrillApiError, IOException
     {
 		
-        //return googleQuery(url,params,responseType);
-        return apacheQuery(url,params,responseType);
+        return googleQuery(url,params,responseType);
+        //return apacheQuery(url,params,responseType);
 
 	}
 
