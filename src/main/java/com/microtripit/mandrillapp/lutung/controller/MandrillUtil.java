@@ -49,18 +49,8 @@ final class MandrillUtil {
     {
 		
         return googleQuery(url,params,responseType);
-        //return apacheQuery(url,params,responseType);
 
 	}
-
-    private static final <OUT> OUT apacheQuery(final String url,
-                                               final Map<String,Object> params,
-                                               Class<OUT> responseType) throws MandrillApiError, IOException
-    {
-		final MandrillRequest<OUT> requestModel =  new MandrillRequest<OUT>(url, params, responseType);
-		return MandrillRequestDispatcher.execute(requestModel, null);
-
-    }
 
     private static final <OUT> OUT googleQuery(final String url,
                                                final Map<String,Object> params,
