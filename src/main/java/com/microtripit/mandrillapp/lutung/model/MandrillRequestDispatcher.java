@@ -3,24 +3,33 @@
  */
 package com.microtripit.mandrillapp.lutung.model;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.*;
-import java.util.List;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpHost;
 import com.microtripit.mandrillapp.lutung.logging.Logger;
 import com.microtripit.mandrillapp.lutung.logging.LoggerFactory;
 import com.microtripit.mandrillapp.lutung.model.MandrillApiError.MandrillError;
-import org.apache.http.HttpResponse;
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpHost;
 import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.CoreProtocolPNames;
-import org.apache.http.util.EntityUtils;
 import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.ProxySelector;
+import java.net.URI;
+import java.util.List;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.StatusLine;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.conn.params.ConnRoutePNames;
+//import org.apache.http.impl.client.DefaultHttpClient;
+//import org.apache.http.params.CoreProtocolPNames;
+//import org.apache.http.util.EntityUtils;
+//import org.apache.http.params.HttpConnectionParams;
 
 /**
  * @author rschreijer
@@ -55,7 +64,7 @@ public final class MandrillRequestDispatcher {
 				log.debug("Using new instance of default http client");
 				client = new DefaultHttpClient();
 				client.getParams().setParameter(
-						CoreProtocolPNames.USER_AGENT, 
+						CoreProtocolPNames.USER_AGENT,
 						client.getParams().getParameter(CoreProtocolPNames.USER_AGENT)+ "/Lutung-0.1");
                 // use proxy?
                 final ProxyData proxyData = detectProxyServer(requestModel.getUrl());

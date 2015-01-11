@@ -81,6 +81,7 @@
 
     <dependencies>
         <!-- Apache Http Client -->
+        <!--
          <dependency>
              <groupId>org.apache.httpcomponents</groupId>
              <artifactId>httpclient</artifactId>
@@ -93,7 +94,7 @@
                  </exclusion>
              </exclusions>
          </dependency>
-
+        -->
         <!-- GSON JSON mapper -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
