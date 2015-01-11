@@ -15,6 +15,12 @@
 		<level value="info" />
 	</logger>
 	
+	<logger name="com.microtripit.mandrillapp.lutung.model.MandrillRequest">
+		<level value="debug" />
+	</logger>
+	
+	
+	
 	<!-- Root Logger -->
 	<root>
 		<priority value="info" />

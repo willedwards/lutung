@@ -3,6 +3,8 @@
  */
 package com.microtripit.mandrillapp.lutung.model;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Simple Wrapper class that is a container for a 
  * <code>name,content</code> pair, as String objects.</p>
@@ -10,7 +12,12 @@ package com.microtripit.mandrillapp.lutung.model;
  * @since Mar 18, 2013
  */
 public final class MandrillContentWrapper {
-	private String name, content;
+	
+	@Key 
+	private String name;
+	
+	@Key 
+	private String content;
 
 	/**
 	 * @return the name

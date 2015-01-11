@@ -3,7 +3,7 @@
  */
 package com.microtripit.mandrillapp.lutung.view;
 
-import java.util.Date;
+import com.google.api.client.util.DateTime;
 
 /**
  * <p>Search parameters for message searching.</p>
@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class MandrillSearchMessageParams {
 	private String query;
-	private Date date_from, date_to;
+	private DateTime date_from, date_to;
 	private String[] tags, senders, api_keys;
 	private Integer limit;
 	
@@ -31,25 +31,25 @@ public class MandrillSearchMessageParams {
 	/**
 	 * @return The start date.
 	 */
-	public Date getDateFrom() {
+	public DateTime getDateFrom() {
 		return date_from;
 	}
 	/**
 	 * @param dateFrom The start date.
 	 */
-	public void setDateFrom(final Date dateFrom) {
+	public void setDateFrom(final DateTime dateFrom) {
 		this.date_from = dateFrom;
 	}
 	/**
 	 * @return The end date.
 	 */
-	public Date getDateTo() {
+	public DateTime getDateTo() {
 		return date_to;
 	}
 	/**
 	 * @param dateTo The end date.
 	 */
-	public void setDateTo(final Date dateTo) {
+	public void setDateTo(final DateTime dateTo) {
 		this.date_to = dateTo;
 	}
 	/**
