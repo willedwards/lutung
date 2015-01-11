@@ -3,18 +3,21 @@
  */
 package com.microtripit.mandrillapp.lutung.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.microtripit.mandrillapp.lutung.logging.Logger;
 import com.microtripit.mandrillapp.lutung.logging.LoggerFactory;
-import com.microtripit.mandrillapp.lutung.model.*;
+import com.microtripit.mandrillapp.lutung.model.HandleResponseException;
+import com.microtripit.mandrillapp.lutung.model.MandrillApiError;
+import com.microtripit.mandrillapp.lutung.model.MandrillGoogleHttpRequest;
 import com.nando.googleHttpJavaClientPoc.HttpRequestHelper;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author rschreijer
@@ -49,18 +52,7 @@ final class MandrillUtil {
     {
 		
         return googleQuery(url,params,responseType);
-        //return apacheQuery(url,params,responseType);
-
 	}
-
-    private static final <OUT> OUT apacheQuery(final String url,
-                                               final Map<String,Object> params,
-                                               Class<OUT> responseType) throws MandrillApiError, IOException
-    {
-		final MandrillRequest<OUT> requestModel =  new MandrillRequest<OUT>(url, params, responseType);
-		return MandrillRequestDispatcher.execute(requestModel, null);
-
-    }
 
     private static final <OUT> OUT googleQuery(final String url,
                                                final Map<String,Object> params,
@@ -72,8 +64,6 @@ final class MandrillUtil {
 
         try
         {
-
-
             HttpResponse response = request.execute();
             if (200 == response.getStatusCode())
             {
@@ -87,14 +77,8 @@ final class MandrillUtil {
                     log.error(e.getMessage());
                     throw new MandrillApiError("something went wrong", e);
                 }
-
-                OUT r = (OUT) lutung;
-
-                //r = response.parseAs(responseType);
-
-
+				OUT r = (OUT) lutung;
                 return r;
-
             }
             else
             {
