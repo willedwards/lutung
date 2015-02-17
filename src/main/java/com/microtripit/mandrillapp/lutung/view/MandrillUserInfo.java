@@ -5,14 +5,26 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * @author rschreijer
  * @since Mar 16, 2013
  */
 public class MandrillUserInfo {
-	private String username, public_id;
+	@Key
+	private String username;
+	@Key
+	private String public_id;
+	@Key
 	private Date created_at;
-	private Integer reputation, hourly_quota, backlog;
+	@Key
+	private Integer reputation;
+	@Key
+	private Integer hourly_quota;
+	@Key
+	private Integer backlog;
+	@Key
 	private StatsBucket stats;
 	
 	/**

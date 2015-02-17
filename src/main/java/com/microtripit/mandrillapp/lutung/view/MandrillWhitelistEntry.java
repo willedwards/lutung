@@ -5,13 +5,19 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Information about a whitelist entry.</p>
  * @author rschreijer
  *
  */
 public class MandrillWhitelistEntry {
-	private String email, detail;
+	@Key
+	private String email;
+	@Key
+	private String detail;
+	@Key
 	private Date created_at;
 	
 	/**

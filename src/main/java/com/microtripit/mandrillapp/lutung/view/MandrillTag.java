@@ -3,6 +3,7 @@
  */
 package com.microtripit.mandrillapp.lutung.view;
 
+import com.google.api.client.util.Key;
 import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
 
 /**
@@ -11,8 +12,11 @@ import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
  * @since Mar 16, 2013
  */
 public class MandrillTag extends Stats {
+	@Key
 	private String tag;
+	@Key
 	private Integer reputation;
+	@Key
 	private StatsBucket stats;
 
 	/**

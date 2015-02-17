@@ -3,17 +3,25 @@
  */
 package com.microtripit.mandrillapp.lutung.model;
 
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequest;
-import com.microtripit.mandrillapp.lutung.logging.Logger;
-import com.microtripit.mandrillapp.lutung.logging.LoggerFactory;
-import com.nando.googleHttpJavaClientPoc.HttpRequestHelper;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.http.entity.StringEntity;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.microtripit.mandrillapp.lutung.logging.Logger;
+import com.microtripit.mandrillapp.lutung.logging.LoggerFactory;
+import com.nando.googleHttpJavaClientPoc.HttpRequestHelper;
 
 
 /**
@@ -75,20 +83,47 @@ public final class MandrillGoogleHttpRequest<OUT>
 
         }
     }
-
-    public static Object handleResponse(final InputStream is, Class responseContentType) throws HandleResponseException
+    
+    @SuppressWarnings("unchecked")
+    static <T> T[] newArray(Class<T> type, int length)
+    {
+        return (T[]) java.lang.reflect.Array.newInstance(type, length);
+    }
+    
+    public static <OUT> OUT handleResponse(final InputStream is, Class<OUT> responseContentType) throws HandleResponseException
     {
 
         String raw = null;
         try
         {
-            raw = IOUtils.toString(is);
-            log.debug("raw content from response:\n" + raw);
-            return LutungGsonUtils.getGson().fromJson(raw, responseContentType);
-
+        	raw = IOUtils.toString(is);
+        	log.debug("raw content from response:\n" + raw);
+        	
+        	if (responseContentType.isArray()) {
+        		
+        		Gson gson = LutungGsonUtils.getGson();
+        		JsonParser parser = new JsonParser(); 
+        	    JsonArray jArray = parser.parse(raw).getAsJsonArray();
+        	    
+				List<Object> lcs = new ArrayList<Object>();
+				Object item;
+        	    for(JsonElement obj : jArray ){
+        	        item = gson.fromJson( obj , responseContentType.getComponentType());
+        	        lcs.add(item);
+        	    }
+        	    @SuppressWarnings("unchecked")
+				OUT result = (OUT) Array.newInstance(responseContentType.getComponentType(), lcs.size());
+        	    for (int i=0; i< lcs.size(); i++){
+        	    	Array.set(result, i, lcs.get(i));
+        	    }
+        	    return result;
+        	} else {
+        		return LutungGsonUtils.getGson().fromJson(raw, responseContentType);
+        	}    
         }
         catch (final Throwable t)
         {
+        	//t.printStackTrace();
             String msg = "Error handling Mandrill response " + ((raw != null) ? ": '" + raw + "'" : "");
             throw new HandleResponseException(msg, t);
 

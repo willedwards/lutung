@@ -7,29 +7,78 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.google.api.client.util.Key;
+import com.google.api.client.util.Value;
+
 /**
  * <p>Information on a message to send.</p>
  * @author rschreijer
  * @since Mar 16, 2013
  */
 public class MandrillMessage {
-	private String subject, html, text, from_email, from_name;
+	@Key 
+	private String subject;
+	@Key 
+	private String html;
+	@Key 
+	private String text;	
+	@Key 
+	private String from_email;
+	@Key 
+	private String from_name;
+	@Key 
 	private List<Recipient> to;
+	@Key 
 	private Map<String,String> headers;
-	private Boolean important, track_opens, track_clicks, auto_text, auto_html, 
-			inline_css, url_strip_qs, preserve_recipients, view_content_link;
-	private String bcc_address, tracking_domain, signing_domain, 
-			return_path_domain;
+	
+	@Key
+	private Boolean important;
+	@Key
+	private Boolean track_opens;
+	@Key
+	private Boolean track_clicks;
+	@Key
+	private Boolean auto_text;
+	@Key
+	private Boolean auto_html;
+	@Key
+	private Boolean inline_css;
+	@Key
+	private Boolean url_strip_qs;
+	@Key
+	private Boolean preserve_recipients;
+	@Key
+	private Boolean view_content_link;
+	
+	@Key
+	private String bcc_address; 
+	@Key
+	private String tracking_domain; 
+	@Key
+	private String signing_domain; 
+	@Key
+	private String return_path_domain;
+	@Key
 	private Boolean merge;
+	@Key
 	private List<MergeVar> global_merge_vars;
+	@Key
 	private List<MergeVarBucket> merge_vars;
+	@Key
 	private List<String> tags;
+	@Key
 	private String subaccount;
+	@Key
 	private List<String> google_analytics_domains;
+	@Key
 	private String google_analytics_campaign;
+	@Key
 	private Map<String,String> metadata;
+	@Key
 	private List<RecipientMetadata> recipient_metadata;
+	@Key
 	private List<MessageContent> attachments;
+	@Key
 	private List<MessageContent> images;
 	// following params are send-only
 	
@@ -575,10 +624,19 @@ public class MandrillMessage {
 		 * <p>The Recipient type (To, Cc, Bcc, ...)
 		 */
 		public enum Type {
-			TO, BCC, CC
+			@Value("to") 
+			TO,
+			@Value("bcc")
+			BCC, 
+			@Value("cc")
+			CC
 		}
-
-		private String email, name;
+		
+		@Key
+		private String email;
+		@Key
+		private String name;
+		@Key
 		private Type type = Type.TO;
 
 		/**
@@ -633,7 +691,13 @@ public class MandrillMessage {
 	 * @since Mar 16, 2013
 	 */
 	public static class MessageContent {
-		private String name, type, content;
+		@Key
+		private String name;
+		@Key
+		private String type;
+		@Key
+		private String content;
+		@Key
 		private Boolean binary;
 		
 		/**
@@ -695,7 +759,9 @@ public class MandrillMessage {
 	 * @since Mar 16, 2013
 	 */
 	public static class MergeVarBucket {
+		@Key
 		private String rcpt;
+		@Key
 		private MergeVar[] vars;
 		/**
 		 * @return The email address of the recipient that 
@@ -731,7 +797,10 @@ public class MandrillMessage {
 	 * @since Mar 16, 2013
 	 */
 	public static class MergeVar {
-		private String name, content;
+		@Key
+		private String name;
+		@Key
+		private String content;
 
 		/**
 		 * Construct a MergeVar.
@@ -785,7 +854,9 @@ public class MandrillMessage {
 	 * @since Mar 16, 2013
 	 */
 	public static class RecipientMetadata {
+		@Key
 		private String rcpt;
+		@Key
 		private Map<String,String> values;
 		/**
 		 * @return The email address of the recipient 

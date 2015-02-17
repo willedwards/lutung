@@ -3,13 +3,18 @@
  */
 package com.microtripit.mandrillapp.lutung.view;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>A mailbox route.</p>
  * @author rschreijer
  * @since Mar 19, 2013
  */
 public class MandrillMailboxRoute {
-	private String pattern, url;
+	@Key
+	private String pattern;
+	@Key
+	private String url;
 
 	/**
 	 * @return The search pattern that the mailbox 

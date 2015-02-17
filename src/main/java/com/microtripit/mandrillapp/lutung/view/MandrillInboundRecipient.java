@@ -1,12 +1,19 @@
 package com.microtripit.mandrillapp.lutung.view;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Recipient information.</p>
  * @author rschreijer
  * @since Mar 19, 2013
  */
 public class MandrillInboundRecipient {
-	private String email, pattern, url;
+	@Key
+	private String email;
+	@Key
+	private String pattern;
+	@Key
+	private String url;
 
 	/**
 	 * @return The email address of the matching recipient.

@@ -5,15 +5,27 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Information on a sending domain for the account.</p>
  * @author rschreijer
  * @since Mar 18, 2013
  */
 public class MandrillDomain {
+	@Key
 	private String domain;
-	private Date created_at, last_tested_at, verified_at;
-	private MandrillDomainDetails spf, dkim;
+	@Key
+	private Date created_at;
+	@Key
+	private Date last_tested_at;
+	@Key
+	private Date verified_at;
+	@Key
+	private MandrillDomainDetails spf;
+	@Key
+	private MandrillDomainDetails dkim;
+	@Key
 	private Boolean valid_signing;
 	
 	/**
@@ -70,8 +82,11 @@ public class MandrillDomain {
 	}
 	
 	public static class MandrillDomainDetails {
+		@Key
 		private Boolean valid;
+		@Key
 		private Date valid_after;
+		@Key
 		private String error;
 		
 		/**

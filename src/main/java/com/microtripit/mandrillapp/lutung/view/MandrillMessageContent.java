@@ -2,6 +2,8 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.List;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>The content of a sent message.  Corresponds to the result of {@code messages/content.json}.</p>
  *
@@ -9,13 +11,24 @@ import java.util.List;
  * @since Feb 12, 2014
  */
 public class MandrillMessageContent {
+	@Key
     private Long ts;
-    private String _id;
-    private String from_email, from_name, subject;
+	@Key
+	private String _id;
+	@Key
+	private String from_email;
+	@Key
+	private String from_name;
+	@Key
+	private String subject;
+	@Key
     private MandrillMessage.Recipient to;
+	@Key
     private List<String> tags;
     // private Map< String, String > headers;
+	@Key
     private String text, html;
+	@Key
     private List< MandrillMessage.MessageContent > attachments;
 
     /**

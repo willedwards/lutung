@@ -5,15 +5,25 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Info about a dedicated IP.</p>
  * @author rschreijer
  *
  */
 public class MandrillDedicatedIp {
-	private String ip, pool, domain;
+	@Key 
+	private String ip;
+	@Key 
+	private String pool;
+	@Key 
+	private String domain;
+	@Key 
 	private Date created_at;
+	@Key 
 	private CustomDns custom_dns;
+	@Key 
 	private WarmupStatus warmup;
 	
 	/**
@@ -60,7 +70,11 @@ public class MandrillDedicatedIp {
 	 *
 	 */
 	public static class CustomDns {
-		private Boolean enabled, valid;
+		@Key 
+		private Boolean enabled;
+		@Key
+		private Boolean valid;
+		@Key
 		private String error;
 		
 		/**
@@ -91,8 +105,12 @@ public class MandrillDedicatedIp {
 	 *
 	 */
 	public static class WarmupStatus {
+		@Key
 		private Boolean warming_up;
-		private Date start_at, end_at;
+		@Key
+		private Date start_at;
+		@Key
+		private Date end_at;
 		
 		/**
 		 * @return Whether the ip is currently in warmup mode.

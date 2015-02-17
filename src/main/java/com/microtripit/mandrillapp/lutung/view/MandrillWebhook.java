@@ -5,6 +5,8 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Info about a webhook.</p>
  * @author rschreijer
@@ -20,10 +22,26 @@ public class MandrillWebhook {
 	public static final String UNSUB = "unsub";
 	public static final String REJECT = "reject";
 	
-	private Integer id, batches_sent, events_sent;
-	private String url, description, auth_key, last_error;
+	@Key
+	private Integer id;
+	@Key
+	private Integer batches_sent;
+	@Key
+	private Integer events_sent;
+	@Key
+	private String url;
+	@Key
+	private String description;
+	@Key
+	private String auth_key;
+	@Key
+	private String last_error;
+	@Key
 	private String[] events;
-	private Date created_at, last_sent_at;
+	@Key
+	private Date created_at;
+	@Key
+	private Date last_sent_at;
 	
 	/**
 	 * @return The unique integer indentifier for the webhook.

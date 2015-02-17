@@ -5,17 +5,39 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.List;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Basic information for a message.</p>
  * @author rschreijer
  * @since Mar 16, 2013
  */
 public class MandrillMessageInfo {
-    private Long ts;
-	private Integer opens, clicks;
-	private String _id, sender, template, subject, email, state;
+	@Key
+	private Long ts;
+	@Key
+	private Integer opens;
+	@Key
+	private Integer clicks;
+	@Key
+	private String _id;
+	@Key
+	private String sender;
+	@Key
+	private String template;
+	@Key
+	private String subject;
+	@Key
+	private String email;
+	@Key
+	private String state;
+	@Key
 	private List<String> tags;
-	private List<UserActionDetail> opens_detail, clicks_detail;
+	@Key
+	private List<UserActionDetail> opens_detail;
+	@Key
+	private List<UserActionDetail> clicks_detail;
+	@Key
 	private List<SMTPEvent> smtp_events;
 //	private Map<String,String> metadata;
 	
@@ -102,8 +124,16 @@ public class MandrillMessageInfo {
 //	}
 	
 	public static class UserActionDetail {
+		@Key
 		private Integer ts;
-		private String url, ip, location, ua;
+		@Key
+		private String url;
+		@Key
+		private String ip;
+		@Key
+		private String location;
+		@Key
+		private String ua;
 		
 		/**
 		 * @return The unix timestamp from when the action occured.
@@ -139,8 +169,12 @@ public class MandrillMessageInfo {
 	}
 	
 	public static class SMTPEvent {
+		@Key
 		private Integer ts;
-		private String type, diag;
+		@Key
+		private String type;
+		@Key
+		private String diag;
 		
 		/**
 		 * @return The Unix timestamp when the event occured.

@@ -5,6 +5,7 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
 import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
 
 /**
@@ -12,13 +13,33 @@ import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
  *
  */
 public class MandrillSubaccountInfo {
-	private String id, name, notes;
+	@Key
+	private String id;
+	@Key
+	private String name;
+	@Key
+	private String notes;
+	@Key
 	private Integer custom_quota;
+	@Key
 	private String status;
+	@Key
 	private Integer reputation;
-	private Date created_at, first_sent_at;
-	private Integer sent_weekly, sent_monthly, sent_total, sent_hourly;
+	@Key
+	private Date created_at;
+	@Key
+	private Date first_sent_at;
+	@Key
+	private Integer sent_weekly;
+	@Key
+	private Integer sent_monthly;
+	@Key
+	private Integer sent_total;
+	@Key
+	private Integer sent_hourly;
+	@Key
 	private Integer hourly_quota;
+	@Key
 	private Stats last_30_days;
 	
 	

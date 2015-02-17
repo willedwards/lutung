@@ -2,15 +2,29 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Information for a rejection blacklist entry.</p>
  * @author rschreijer
  * @since Mar 18, 2013
  */
 public class MandrillRejectsEntry {
-	private String email, reason, detail;
-	private Date created_at, last_event_at, expires_at;
+	@Key
+	private String email;
+	@Key
+	private String reason;
+	@Key
+	private String detail;
+	@Key
+	private Date created_at;
+	@Key
+	private Date last_event_at;
+	@Key
+	private Date expires_at;
+	@Key
 	private Boolean expired;
+	@Key
 	private MandrillSender sender;
 	
 	/**

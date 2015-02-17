@@ -3,13 +3,22 @@
  */
 package com.microtripit.mandrillapp.lutung.view;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>The sending results for a single recipient.</p>
  * @author rschreijer
  * @since Mar 16, 2013
  */
 public class MandrillMessageStatus {
-	private String email, status, reject_reason, _id;
+	@Key
+	private String email;
+	@Key
+	private String status;
+	@Key
+	private String reject_reason;
+	@Key
+	private String _id;
 
 	/**
 	 * @return The email address of the recipient.

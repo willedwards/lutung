@@ -5,13 +5,25 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * @author rschreijer
  *
  */
 public class MandrillExportJobInfo {
-	private String id, type, state, result_url;
-	private Date created_at, finished_at;
+	@Key
+	private String id;
+	@Key
+	private String type;
+	@Key
+	private String state;
+	@Key
+	private String result_url;
+	@Key
+	private Date created_at;
+	@Key
+	private Date finished_at;
 	
 	/**
 	 * @return The unique identifier for this Export. Use 

@@ -6,13 +6,18 @@ package com.microtripit.mandrillapp.lutung.view;
 import java.util.Date;
 import java.util.List;
 
+import com.google.api.client.util.Key;
+
 /**
  * @author rschreijer
  *
  */
 public class MandrillDedicatedIpPool {
+	@Key
 	private String name;
+	@Key
 	private Date created_at;
+	@Key
 	private List<MandrillDedicatedIp> ips;
 	
 	/**

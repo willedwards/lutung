@@ -5,6 +5,7 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
 import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
 
 /**
@@ -13,6 +14,7 @@ import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
  * @since Mar 16, 2013
  */
 public class MandrillTimeSeries extends Stats {
+	@Key
 	private Date time;
 
 	/**

@@ -5,16 +5,46 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Information about a template.</p>
  * @author rschreijer
  * @since Mar 18, 2013
  */
 public class MandrillTemplate {
-	private String name, slug, code, subject, from_email, from_name, text, 
-			publish_name, publish_code, publish_subject, publish_from_email,
-			publish_from_name, publish_text;
-	private Date published_at, created_at, updated_at;
+	@Key
+	private String name;
+	@Key
+	private String slug;
+	@Key
+	private String code;
+	@Key
+	private String subject;
+	@Key
+	private String from_email;
+	@Key
+	private String from_name;
+	@Key
+	private String text;
+	@Key
+	private String publish_name;
+	@Key
+	private String publish_code;
+	@Key
+	private String publish_subject;
+	@Key
+	private String publish_from_email;
+	@Key
+	private String publish_from_name;
+	@Key
+	private String publish_text;
+	@Key
+	private Date published_at;
+	@Key
+	private Date created_at;
+	@Key
+	private Date updated_at;
 	
 	/**
 	 * @return The name of the template.

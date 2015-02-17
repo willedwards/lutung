@@ -3,14 +3,26 @@
  */
 package com.microtripit.mandrillapp.lutung.view;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>An aggregate summary of sending stats.</p>
  * @author rschreijer
  * @since Mar 16, 2013
  */
 public class StatsBucket {
-	private Stats today, last_7_days, last_30_days;
-	private Stats last_60_days, last_90_days, all_time;
+	@Key
+	private Stats today;
+	@Key
+	private Stats last_7_days;
+	@Key
+	private Stats last_30_days;
+	@Key
+	private Stats last_60_days;
+	@Key
+	private Stats last_90_days;
+	@Key
+	private Stats all_time;
 
 	/**
 	 * @return The stats so far for today.
@@ -55,9 +67,26 @@ public class StatsBucket {
 	 * @since Mar 16, 2013
 	 */
 	public static class Stats {
-		private Integer sent, hard_bounces, soft_bounces, rejects;
-		private Integer complaints, unsubs, opens, clicks;
-		private Integer unique_opens, unique_clicks;
+		@Key
+		private Integer sent;
+		@Key
+		private Integer hard_bounces;
+		@Key
+		private Integer soft_bounces;
+		@Key
+		private Integer rejects;
+		@Key
+		private Integer complaints;
+		@Key
+		private Integer unsubs;
+		@Key
+		private Integer opens;
+		@Key
+		private Integer clicks;
+		@Key
+		private Integer unique_opens;
+		@Key
+		private Integer unique_clicks;
 
 		/**
 		 * @return The number of emails sent.

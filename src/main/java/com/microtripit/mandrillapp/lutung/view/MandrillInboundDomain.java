@@ -5,14 +5,19 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Info about an inbound domain.</p>
  * @author rschreijer
  * @since Mar 18, 2013
  */
 public class MandrillInboundDomain {
+	@Key
 	private String domain;
+	@Key
 	private Date created_at;
+	@Key
 	private Boolean valid_mx;
 	
 	/**

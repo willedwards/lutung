@@ -4,6 +4,7 @@
 package com.microtripit.mandrillapp.lutung.view;
 
 import com.google.api.client.util.DateTime;
+import com.google.api.client.util.Key;
 
 /**
  * <p>Search parameters for message searching.</p>
@@ -11,9 +12,19 @@ import com.google.api.client.util.DateTime;
  * @since Mar 16, 2013
  */
 public class MandrillSearchMessageParams {
+	@Key
 	private String query;
-	private DateTime date_from, date_to;
-	private String[] tags, senders, api_keys;
+	@Key
+	private DateTime date_from;
+	@Key
+	private DateTime date_to;
+	@Key
+	private String[] tags;
+	@Key
+	private String[] senders;
+	@Key
+	private String[] api_keys;
+	@Key
 	private Integer limit;
 	
 	/**

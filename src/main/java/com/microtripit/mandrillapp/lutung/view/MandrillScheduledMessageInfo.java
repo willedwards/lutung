@@ -5,14 +5,26 @@ package com.microtripit.mandrillapp.lutung.view;
 
 import java.util.Date;
 
+import com.google.api.client.util.Key;
+
 /**
  * <p>Info on a scheduled email.</p>
  * @author rschreijer
  *
  */
 public class MandrillScheduledMessageInfo {
-	private String _id, from_email, to, subject;
-	private Date created_at, send_at;
+	@Key
+	private String _id;
+	@Key
+	private String from_email;
+	@Key
+	private String to;
+	@Key
+	private String subject;
+	@Key
+	private Date created_at;
+	@Key
+	private Date send_at;
 	
 	/**
 	 * @return The scheduled message id.
