@@ -14,7 +14,7 @@ import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
  */
 public class MandrillSender extends Stats {
 	private String address;
-	private Date created_at;
+	private Date createdAt;
 	private StatsBucket stats;
 	
 	/**
@@ -27,7 +27,7 @@ public class MandrillSender extends Stats {
 	 * @return The time that the sender was first seen by Mandrill, in UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return An aggregate summary of the sender's sending stats.

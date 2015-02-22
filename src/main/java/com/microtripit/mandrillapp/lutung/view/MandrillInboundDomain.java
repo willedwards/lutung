@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class MandrillInboundDomain {
 	private String domain;
-	private Date created_at;
-	private Boolean valid_mx;
+	private Date createdAt;
+	private Boolean validMx;
 	
 	/**
 	 * @return The domain name that is accepting mail.
@@ -26,14 +26,14 @@ public class MandrillInboundDomain {
 	 * was added, UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return <code>True</code> if this inbound domain has successfully set 
 	 * up an MX record to deliver mail to the Mandrill servers.
 	 */
 	public Boolean getValidMx() {
-		return valid_mx;
+		return validMx;
 	}
 
 }

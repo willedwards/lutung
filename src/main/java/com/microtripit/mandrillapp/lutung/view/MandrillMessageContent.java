@@ -11,7 +11,7 @@ import java.util.List;
 public class MandrillMessageContent {
     private Long ts;
     private String _id;
-    private String from_email, from_name, subject;
+    private String fromEmail, fromName, subject;
     private MandrillMessage.Recipient to;
     private List<String> tags;
     // private Map< String, String > headers;
@@ -36,14 +36,14 @@ public class MandrillMessageContent {
      * @return The email address of the sender
      */
     public String getFrom_email() {
-        return from_email;
+        return fromEmail;
     }
 
     /**
      * @return the alias of the sender (if any)
      */
     public String getFrom_name() {
-        return from_name;
+        return fromName;
     }
 
     /**

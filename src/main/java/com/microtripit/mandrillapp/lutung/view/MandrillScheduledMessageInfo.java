@@ -11,8 +11,8 @@ import java.util.Date;
  *
  */
 public class MandrillScheduledMessageInfo {
-	private String _id, from_email, to, subject;
-	private Date created_at, send_at;
+	private String _id, fromEmail, to, subject;
+	private Date createdAt, sendAt;
 	
 	/**
 	 * @return The scheduled message id.
@@ -24,7 +24,7 @@ public class MandrillScheduledMessageInfo {
 	 * @return The email's sender address.
 	 */
 	public String getFromEmail() {
-		return from_email;
+		return fromEmail;
 	}
 	/**
 	 * @return The email's recipient.
@@ -42,13 +42,13 @@ public class MandrillScheduledMessageInfo {
 	 * @return The time when the message was created.
 	 */
 	public Date getCreated_at() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The time when the message will be sent.
 	 */
 	public Date getSend_at() {
-		return send_at;
+		return sendAt;
 	}
 
 }

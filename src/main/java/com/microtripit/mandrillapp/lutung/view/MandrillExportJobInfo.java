@@ -10,8 +10,8 @@ import java.util.Date;
  *
  */
 public class MandrillExportJobInfo {
-	private String id, type, state, result_url;
-	private Date created_at, finished_at;
+	private String id, type, state, resultUrl;
+	private Date createdAt, finishedAt;
 	
 	/**
 	 * @return The unique identifier for this Export. Use 
@@ -39,19 +39,19 @@ public class MandrillExportJobInfo {
 	 * if the job is complete.
 	 */
 	public String getResultUrl() {
-		return result_url;
+		return resultUrl;
 	}
 	/**
 	 * @return The date and time that the export job was created.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The date and time that the export job was finished.
 	 */
 	public Date getFinishedAt() {
-		return finished_at;
+		return finishedAt;
 	}
 
 	

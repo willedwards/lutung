@@ -20,10 +20,10 @@ public class MandrillWebhook {
 	public static final String UNSUB = "unsub";
 	public static final String REJECT = "reject";
 	
-	private Integer id, batches_sent, events_sent;
-	private String url, description, auth_key, last_error;
+	private Integer id, batchesSent, eventsSent;
+	private String url, description, authKey, last_error;
 	private String[] events;
-	private Date created_at, last_sent_at;
+	private Date createdAt, lastSentAt;
 	
 	/**
 	 * @return The unique integer indentifier for the webhook.
@@ -36,14 +36,14 @@ public class MandrillWebhook {
 	 * ever been sent to this webhook.
 	 */
 	public Integer getBatchesSent() {
-		return batches_sent;
+		return batchesSent;
 	}
 	/**
 	 * @return The total number of events that have ever 
 	 * been sent to this webhook. 
 	 */
 	public Integer getEventsSent() {
-		return events_sent;
+		return eventsSent;
 	}
 	/**
 	 * @return The URL that the event data will be posted to.
@@ -61,7 +61,7 @@ public class MandrillWebhook {
 	 * @return The key used to requests for this webhook.
 	 */
 	public String getAuthKey() {
-		return auth_key;
+		return authKey;
 	}
 	/**
 	 * @return If we've ever gotten an error trying to post 
@@ -74,14 +74,14 @@ public class MandrillWebhook {
 	 * @return The date and time that the webhook was created, UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The date and time that the webhook last successfully 
 	 * received events, UTC.
 	 */
 	public Date getLastSentAt() {
-		return last_sent_at;
+		return lastSentAt;
 	}
 	/**
 	 * @return The message events that will be posted to the hook.

@@ -16,19 +16,19 @@ public class MandrillMessage {
 	private String subject, html, text, from_email, from_name;
 	private List<Recipient> to;
 	private Map<String,String> headers;
-	private Boolean important, track_opens, track_clicks, auto_text, auto_html, 
-			inline_css, url_strip_qs, preserve_recipients, view_content_link;
-	private String bcc_address, tracking_domain, signing_domain, 
-			return_path_domain;
+	private Boolean important, trackOpens, trackClicks, autoText, autoHtml, 
+			inlineCss, urlStripQs, preserveRecipients, viewContentLink;
+	private String bccAddress, trackingDomain, signingDomain, 
+			returnPathDomain;
 	private Boolean merge;
-	private List<MergeVar> global_merge_vars;
-	private List<MergeVarBucket> merge_vars;
+	private List<MergeVar> globalMergeVars;
+	private List<MergeVarBucket> mergeVars;
 	private List<String> tags;
 	private String subaccount;
-	private List<String> google_analytics_domains;
-	private String google_analytics_campaign;
+	private List<String> googleAnalyticsDomains;
+	private String googleAnalyticsCampaign;
 	private Map<String,String> metadata;
-	private List<RecipientMetadata> recipient_metadata;
+	private List<RecipientMetadata> recipientMetadata;
 	private List<MessageContent> attachments;
 	private List<MessageContent> images;
 	// following params are send-only
@@ -185,7 +185,7 @@ public class MandrillMessage {
 	 * for the message.
 	 */
 	public Boolean getTrackOpens() {
-		return track_opens;
+		return trackOpens;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class MandrillMessage {
 	 * tracking for the message.
 	 */
 	public void setTrackOpens(final Boolean trackOpens) {
-		this.track_opens = trackOpens;
+		this.trackOpens = trackOpens;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class MandrillMessage {
 	* for the message.
 	*/
 	public Boolean getTrackClicks() {
-		return track_clicks;
+		return trackClicks;
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class MandrillMessage {
 	* for the message.
 	 */
 	public void setTrackClicks(final Boolean trackClicks) {
-		this.track_clicks = trackClicks;
+		this.trackClicks = trackClicks;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class MandrillMessage {
 	 * text part for messages that are not given text.
 	 */
 	public Boolean getAutoText() {
-		return auto_text;
+		return autoText;
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class MandrillMessage {
 	 * text part for messages that are not given text.
 	 */
 	public void setAutoText(final Boolean autoText) {
-		this.auto_text = autoText;
+		this.autoText = autoText;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class MandrillMessage {
 	 * HTML part for messages that are not given HTML.
 	 */
 	public Boolean getAutoHtml() {
-		return auto_html;
+		return autoHtml;
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class MandrillMessage {
 	 * HTML part for messages that are not given HTML.
 	 */
 	public void setAutoHtml(final Boolean autoHtml) {
-		this.auto_html = autoHtml;
+		this.autoHtml = autoHtml;
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class MandrillMessage {
 	 * than 256KB in size.
 	 */
 	public Boolean getInlineCss() {
-		return inline_css;
+		return inlineCss;
 	}
 
 	/**
@@ -259,7 +259,7 @@ public class MandrillMessage {
 	 * documents less than 256KB in size.
 	 */
 	public void setInlineCss(final Boolean inlineCss) {
-		this.inline_css = inlineCss;
+		this.inlineCss = inlineCss;
 	}
 
 	/**
@@ -267,7 +267,7 @@ public class MandrillMessage {
 	 * from URLs when aggregating tracked URL data.
 	 */
 	public Boolean getUrlStripQs() {
-		return url_strip_qs;
+		return urlStripQs;
 	}
 
 	/**
@@ -275,7 +275,7 @@ public class MandrillMessage {
 	 * from URLs when aggregating tracked URL data.
 	 */
 	public void setUrlStripQs(final Boolean urlStripQs) {
-		this.url_strip_qs = urlStripQs;
+		this.urlStripQs = urlStripQs;
 	}
 
 	/**
@@ -283,7 +283,7 @@ public class MandrillMessage {
 	 * to "To" header for each email.
 	 */
 	public Boolean getPreserveRecipients() {
-		return preserve_recipients;
+		return preserveRecipients;
 	}
 
 	/**
@@ -291,7 +291,7 @@ public class MandrillMessage {
 	 * recipients in the "To" header for each email.
 	 */
 	public void setPreserveRecipients(final Boolean preserveRecipients) {
-		this.preserve_recipients = preserveRecipients;
+		this.preserveRecipients = preserveRecipients;
 	}
 	
 	/**
@@ -299,7 +299,7 @@ public class MandrillMessage {
 	 * sensitive emails.
 	 */
 	public Boolean getViewContentLink() {
-		return view_content_link;
+		return viewContentLink;
 	}
 	
 	/**
@@ -307,7 +307,7 @@ public class MandrillMessage {
 	 * sensitive emails.
 	 */
 	public void setViewContentLink(final Boolean view_content_link) {
-		this.view_content_link = view_content_link;
+		this.viewContentLink = view_content_link;
 	}
 
 	/**
@@ -315,7 +315,7 @@ public class MandrillMessage {
 	 * each recipient's email.
 	 */
 	public String getBcc() {
-		return bcc_address;
+		return bccAddress;
 	}
 
 	/**
@@ -323,7 +323,7 @@ public class MandrillMessage {
 	 * exact copy of each recipient's email.
 	 */
 	public void setBcc(final String email) {
-		this.bcc_address = email;
+		this.bccAddress = email;
 	}
 
 	/**
@@ -331,7 +331,7 @@ public class MandrillMessage {
 	 * and clicks instead of mandrillapp.com.
 	 */
 	public String getTrackingDomain() {
-		return tracking_domain;
+		return trackingDomain;
 	}
 
 	/**
@@ -339,7 +339,7 @@ public class MandrillMessage {
 	 * opens and clicks instead of mandrillapp.com.
 	 */
 	public void setTrackingDomain(final String trackingDomain) {
-		this.tracking_domain = trackingDomain;
+		this.trackingDomain = trackingDomain;
 	}
 
 	/**
@@ -347,7 +347,7 @@ public class MandrillMessage {
 	 * mandrill (for "via" or "on behalf of" in email clients).
 	 */
 	public String getSigningDomain() {
-		return signing_domain;
+		return signingDomain;
 	}
 
 	/**
@@ -356,14 +356,14 @@ public class MandrillMessage {
 	 * in email clients).
 	 */
 	public void setSigningDomain(final String signingDomain) {
-		this.signing_domain = signingDomain;
+		this.signingDomain = signingDomain;
 	}
 	
 	/**
 	 * @return The custom domain to use for the messages's return-path.
 	 */
 	public String getReturnPathDomain() {
-		return return_path_domain;
+		return returnPathDomain;
 	}
 	
 	/**
@@ -371,7 +371,7 @@ public class MandrillMessage {
 	 * messages's return-path.
 	 */
 	public void setReturnPathDomain(final String return_path_domain) {
-		this.return_path_domain = return_path_domain;
+		this.returnPathDomain = return_path_domain;
 	}
 
 	/**
@@ -399,7 +399,7 @@ public class MandrillMessage {
 	 * You can override these per recipient.
 	 */
 	public List<MergeVar> getGlobalMergeVars() {
-		return global_merge_vars;
+		return globalMergeVars;
 	}
 
 	/**
@@ -407,7 +407,7 @@ public class MandrillMessage {
 	 * all recipients. You can override these per recipient.
 	 */
 	public void setGlobalMergeVars(final List<MergeVar> globalMergeVars) {
-		this.global_merge_vars = globalMergeVars;
+		this.globalMergeVars = globalMergeVars;
 	}
 
 	/**
@@ -415,7 +415,7 @@ public class MandrillMessage {
 	 * global merge variables with the same name.
 	 */
 	public List<MergeVarBucket> getMergeVars() {
-		return merge_vars;
+		return mergeVars;
 	}
 
 	/**
@@ -423,7 +423,7 @@ public class MandrillMessage {
 	 * global merge variables with the same name.
 	 */
 	public void setMergeVars(final List<MergeVarBucket> mergeVars) {
-		this.merge_vars = mergeVars;
+		this.mergeVars = mergeVars;
 	}
 
 	/**
@@ -492,7 +492,7 @@ public class MandrillMessage {
 	 * query string.
 	 */
 	public List<String> getGoogleAnalyticsDomains() {
-		return google_analytics_domains;
+		return googleAnalyticsDomains;
 	}
 
 	/**
@@ -503,7 +503,7 @@ public class MandrillMessage {
 	public void setGoogleAnalyticsDomains(
 			final List<String> googleAnalyticsDomains) {
 		
-		this.google_analytics_domains = googleAnalyticsDomains;
+		this.googleAnalyticsDomains = googleAnalyticsDomains;
 	}
 
 	/**
@@ -512,7 +512,7 @@ public class MandrillMessage {
 	 * provided the email's from address will be used instead.
 	 */
 	public String getGoogleAnalyticsCampaign() {
-		return google_analytics_campaign;
+		return googleAnalyticsCampaign;
 	}
 
 	/**
@@ -523,7 +523,7 @@ public class MandrillMessage {
 	public void setGoogleAnalyticsCampaign(
 			final String googleAnalyticsCampaign) {
 		
-		this.google_analytics_campaign = googleAnalyticsCampaign;
+		this.googleAnalyticsCampaign = googleAnalyticsCampaign;
 	}
 
 	/**
@@ -551,7 +551,7 @@ public class MandrillMessage {
 	 * global values specified in the metadata parameter.
 	 */
 	public List<RecipientMetadata> getRecipientMetadata() {
-		return recipient_metadata;
+		return recipientMetadata;
 	}
 
 	/**
@@ -560,7 +560,7 @@ public class MandrillMessage {
 	 */
 	public void setRecipientMetadata(
 			final List<RecipientMetadata> recipientMetadata) {
-		this.recipient_metadata = recipientMetadata;
+		this.recipientMetadata = recipientMetadata;
 	}
 
 	

@@ -10,9 +10,9 @@ import java.util.Date;
  * @since Mar 16, 2013
  */
 public class MandrillUserInfo {
-	private String username, public_id;
-	private Date created_at;
-	private Integer reputation, hourly_quota, backlog;
+	private String username, publicId;
+	private Date createdAt;
+	private Integer reputation, hourlyQuota, backlog;
 	private StatsBucket stats;
 	
 	/**
@@ -27,14 +27,14 @@ public class MandrillUserInfo {
 	 * created (UTC).
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 
 	/**
 	 * @return A unique, permanent identifier for this user.
 	 */
 	public String getPublicId() {
-		return public_id;
+		return publicId;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class MandrillUserInfo {
 	 * reputations will have higher hourly quotas.
 	 */
 	public Integer getHourlyQuota() {
-		return hourly_quota;
+		return hourlyQuota;
 	}
 
 	/**

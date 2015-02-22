@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class MandrillSearchMessageParams {
 	private String query;
-	private Date date_from, date_to;
-	private String[] tags, senders, api_keys;
+	private Date dateFrom, dateTo;
+	private String[] tags, senders, apiKeys;
 	private Integer limit;
 	
 	/**
@@ -32,25 +32,25 @@ public class MandrillSearchMessageParams {
 	 * @return The start date.
 	 */
 	public Date getDateFrom() {
-		return date_from;
+		return dateFrom;
 	}
 	/**
 	 * @param dateFrom The start date.
 	 */
 	public void setDateFrom(final Date dateFrom) {
-		this.date_from = dateFrom;
+		this.dateFrom = dateFrom;
 	}
 	/**
 	 * @return The end date.
 	 */
 	public Date getDateTo() {
-		return date_to;
+		return dateTo;
 	}
 	/**
 	 * @param dateTo The end date.
 	 */
 	public void setDateTo(final Date dateTo) {
-		this.date_to = dateTo;
+		this.dateTo = dateTo;
 	}
 	/**
 	 * @return An array of tag names to narrow the 
@@ -89,14 +89,14 @@ public class MandrillSearchMessageParams {
 	 * will return messages sent by ANY of the keys.
 	 */
 	public String[] getApiKeys() {
-		return api_keys;
+		return apiKeys;
 	}
 	/**
 	 * @param api_keys An array of API keys to narrow the search to, 
 	 * will return messages sent by ANY of the keys.
 	 */
 	public void setApiKeys(final String[] api_keys) {
-		this.api_keys = api_keys;
+		this.apiKeys = api_keys;
 	}
 	/**
 	 * @return The maximum number of results to return, 

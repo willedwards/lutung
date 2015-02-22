@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class MandrillDedicatedIpPool {
 	private String name;
-	private Date created_at;
+	private Date createdAt;
 	private List<MandrillDedicatedIp> ips;
 	
 	/**
@@ -25,7 +25,7 @@ public class MandrillDedicatedIpPool {
 	 * @return The date and time that this pool was created.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The dedicated IPs in this pool.

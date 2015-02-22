@@ -13,13 +13,13 @@ import com.microtripit.mandrillapp.lutung.view.StatsBucket.Stats;
  */
 public class MandrillSubaccountInfo {
 	private String id, name, notes;
-	private Integer custom_quota;
+	private Integer customQuota;
 	private String status;
 	private Integer reputation;
-	private Date created_at, first_sent_at;
-	private Integer sent_weekly, sent_monthly, sent_total, sent_hourly;
-	private Integer hourly_quota;
-	private Stats last_30_days;
+	private Date createdAt, firstSentAt;
+	private Integer sentWeekly, sentMonthly, sentTotal, sentHourly;
+	private Integer hourlyQuota;
+	private Stats last30Days;
 	
 	
 	/**
@@ -46,7 +46,7 @@ public class MandrillSubaccountInfo {
 	 * will be managed based on reputation.
 	 */
 	public Integer getCustomQuota() {
-		return custom_quota;
+		return customQuota;
 	}
 	/**
 	 * @return The current sending status of the subaccount, 
@@ -66,54 +66,54 @@ public class MandrillSubaccountInfo {
 	 * @return The date and time that the subaccount was created.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The date and time that the subaccount first sent.
 	 */
 	public Date getFirstSentAt() {
-		return first_sent_at;
+		return firstSentAt;
 	}
 	/**
 	 * @return The number of emails the subaccount has sent 
 	 * so far this week (weeks start on midnight Monday, UTC).
 	 */
 	public Integer getSentWeekly() {
-		return sent_weekly;
+		return sentWeekly;
 	}
 	/**
 	 * @return The number of emails the subaccount has sent 
 	 * so far this month (months start on midnight of the 1st, UTC).
 	 */
 	public Integer getSentMonthly() {
-		return sent_monthly;
+		return sentMonthly;
 	}
 	/**
 	 * @return The number of emails the subaccount has sent 
 	 * since it was created. 
 	 */
 	public Integer getSentTotal() {
-		return sent_total;
+		return sentTotal;
 	}
 	/**
 	 * @return The number of emails the subaccount has sent 
 	 * in the last hour. 
 	 */
 	public Integer getSentHourly() {
-		return sent_hourly;
+		return sentHourly;
 	}
 	/**
 	 * @return The current hourly quota for the subaccount, 
 	 * either manual or reputation-based.
 	 */
 	public Integer getHourlyQuota() {
-		return hourly_quota;
+		return hourlyQuota;
 	}
 	/**
 	 * @return Stats for this subaccount in the last 30 days.
 	 */
 	public Stats getLast30Days() {
-		return last_30_days;
+		return last30Days;
 	}
 	
 }

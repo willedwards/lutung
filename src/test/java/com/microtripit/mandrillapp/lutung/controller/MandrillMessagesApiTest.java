@@ -4,11 +4,13 @@
 package com.microtripit.mandrillapp.lutung.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
-import com.microtripit.mandrillapp.lutung.view.MandrillMessageContent;
 import junit.framework.Assert;
 
 import org.junit.Assume;
@@ -17,7 +19,9 @@ import org.junit.Test;
 import com.microtripit.mandrillapp.lutung.MandrillTestCase;
 import com.microtripit.mandrillapp.lutung.model.MandrillApiError;
 import com.microtripit.mandrillapp.lutung.view.MandrillMessage;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageContent;
 import com.microtripit.mandrillapp.lutung.view.MandrillMessageInfo;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageStatus;
 import com.microtripit.mandrillapp.lutung.view.MandrillSearchMessageParams;
 
 /**
@@ -26,6 +30,40 @@ import com.microtripit.mandrillapp.lutung.view.MandrillSearchMessageParams;
  * @since Mar 21, 2013
  */
 public final class MandrillMessagesApiTest extends MandrillTestCase {
+	
+	@Test
+	public final void testSendTemplate00() throws IOException, MandrillApiError {
+		final HashMap<String, String> templateContent = new HashMap<String, String>();
+		templateContent.put("test", "value");
+
+		MandrillMessage message = new MandrillMessage();
+
+		// addVariablesToMessage(message, "http://www.mysite.com/resetpassword",
+		// "http://www.coreconnection.com/buildurl");
+		message.setTo(buildSingleRecipient("nando@gmail.com"));
+		message.setPreserveRecipients(true);
+
+		MandrillMessageStatus[] status = mandrillApi.messages().sendTemplate(
+				"resetpassword", Collections.EMPTY_MAP, message, false);
+		StringBuilder sb = new StringBuilder();
+		System.out.println("statuses from mandrill = " + status.length);
+		for (int i = 0; i < status.length; i++) {
+			sb.append("EMAIL = " + status[i].getEmail());
+			sb.append("\nID = " + status[i].getId());
+			sb.append("\nREJECT REASON= " + status[i].getRejectReason());
+			sb.append("\nSTATUS = " + status[i].getStatus());
+		}
+		System.out.println("sent to xxx@gmail.com\n" + sb.toString());
+	}
+
+	private static List<MandrillMessage.Recipient> buildSingleRecipient(
+			String email) {
+		ArrayList<MandrillMessage.Recipient> recipients = new ArrayList<MandrillMessage.Recipient>();
+		MandrillMessage.Recipient recipient = new MandrillMessage.Recipient();
+		recipient.setEmail(email);
+		recipients.add(recipient);
+		return recipients;
+	}
 	
 	@Test(expected=MandrillApiError.class)
 	public final void testSend01() throws IOException, MandrillApiError {
