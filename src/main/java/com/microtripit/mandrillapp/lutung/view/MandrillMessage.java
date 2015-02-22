@@ -13,7 +13,7 @@ import java.util.Map;
  * @since Mar 16, 2013
  */
 public class MandrillMessage {
-	private String subject, html, text, from_email, from_name;
+	private String subject, html, text, fromEmail, fromName;
 	private List<Recipient> to;
 	private Map<String,String> headers;
 	private Boolean important, trackOpens, trackClicks, autoText, autoHtml, 
@@ -80,28 +80,28 @@ public class MandrillMessage {
 	 * @return The sender email address.
 	 */
 	public String getFromEmail() {
-		return from_email;
+		return fromEmail;
 	}
 
 	/**
 	 * @param email The sender email address.
 	 */
 	public void setFromEmail(final String email) {
-		this.from_email = email;
+		this.fromEmail = email;
 	}
 
 	/**
 	 * @return Optional from name.
 	 */
 	public String getFromName() {
-		return from_name;
+		return fromName;
 	}
 
 	/**
 	 * @param name Optional from name.
 	 */
 	public void setFromName(final String name) {
-		this.from_name = name;
+		this.fromName = name;
 	}
 
 	/**
@@ -575,11 +575,11 @@ public class MandrillMessage {
 		 * <p>The Recipient type (To, Cc, Bcc, ...)
 		 */
 		public enum Type {
-			TO, BCC, CC
+			to, bcc, cc;
 		}
 
 		private String email, name;
-		private Type type = Type.TO;
+		private Type type = Type.to;
 
 		/**
 		 * @return The type of the recipient.

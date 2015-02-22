@@ -1,4 +1,4 @@
-package com.microtripit.mandrillapp.lutung.model;
+package com.microtripit.mandrillapp.lutung.util;
 
 import java.util.Iterator;
 

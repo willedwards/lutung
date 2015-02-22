@@ -17,7 +17,7 @@ public class MandrillScheduledMessageInfo {
 	/**
 	 * @return The scheduled message id.
 	 */
-	public String getId() {
+	public String get_id() {
 		return _id;
 	}
 	/**

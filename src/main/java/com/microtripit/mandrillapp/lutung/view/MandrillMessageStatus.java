@@ -37,7 +37,7 @@ public class MandrillMessageStatus {
 	/**
 	 * @return The message's unique id.
 	 */
-	public String getId() {
+	public String get_id() {
 		return _id;
 	}
 	
