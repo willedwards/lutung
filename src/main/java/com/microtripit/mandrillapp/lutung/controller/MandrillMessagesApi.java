@@ -10,8 +10,15 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.api.client.util.Key;
 import com.microtripit.mandrillapp.lutung.model.MandrillApiError;
-import com.microtripit.mandrillapp.lutung.view.*;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessage;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageContent;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageInfo;
+import com.microtripit.mandrillapp.lutung.view.MandrillMessageStatus;
+import com.microtripit.mandrillapp.lutung.view.MandrillScheduledMessageInfo;
+import com.microtripit.mandrillapp.lutung.view.MandrillSearchMessageParams;
+import com.microtripit.mandrillapp.lutung.view.MandrillTimeSeries;
 
 /**
  * @author rschreijer
@@ -424,7 +431,10 @@ public class MandrillMessagesApi {
 	}
 	
 	public static final class TemplateContent {
-		private String name, content;
+		@Key
+		private String name;
+		@Key
+		private String content;
 		
 		/**
 		 * @return The name of the content.
