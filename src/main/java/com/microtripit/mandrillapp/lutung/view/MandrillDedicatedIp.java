@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class MandrillDedicatedIp {
 	private String ip, pool, domain;
-	private Date created_at;
-	private CustomDns custom_dns;
+	private Date createdAt;
+	private CustomDns customDns;
 	private WarmupStatus warmup;
 	
 	/**
@@ -38,14 +38,14 @@ public class MandrillDedicatedIp {
 	 * @return The date and time that the dedicated IP was created.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return Information about the ip's custom dns, 
 	 * if it has been configured.
 	 */
 	public CustomDns getCustomDns() {
-		return custom_dns;
+		return customDns;
 	}
 	/**
 	 * @return Information about the ip's warmup status.
@@ -91,26 +91,26 @@ public class MandrillDedicatedIp {
 	 *
 	 */
 	public static class WarmupStatus {
-		private Boolean warming_up;
-		private Date start_at, end_at;
+		private Boolean warmingUp;
+		private Date startAt, endAt;
 		
 		/**
 		 * @return Whether the ip is currently in warmup mode.
 		 */
 		public Boolean getWarmingUp() {
-			return warming_up;
+			return warmingUp;
 		}
 		/**
 		 * @return The start time for the warmup process.
 		 */
 		public Date getStartAt() {
-			return start_at;
+			return startAt;
 		}
 		/**
 		 * @return The end date and time for the warmup process.
 		 */
 		public Date getEndAt() {
-			return end_at;
+			return endAt;
 		}
 	}
 	

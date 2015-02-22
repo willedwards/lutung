@@ -15,8 +15,8 @@ public class MandrillMessageInfo {
 	private Integer opens, clicks;
 	private String _id, sender, template, subject, email, state;
 	private List<String> tags;
-	private List<UserActionDetail> opens_detail, clicks_detail;
-	private List<SMTPEvent> smtp_events;
+	private List<UserActionDetail> opensDetail, clicksDetail;
+	private List<SMTPEvent> smtpEvents;
 //	private Map<String,String> metadata;
 	
 	/**
@@ -40,7 +40,7 @@ public class MandrillMessageInfo {
 	/**
 	 * @return The message's unique id.
 	 */
-	public String getId() {
+	public String get_id() {
 		return _id;
 	}
 	/**
@@ -83,16 +83,16 @@ public class MandrillMessageInfo {
 	 * @return A list of individual opens for the message.
 	 */
 	public List<UserActionDetail> getOpensDetail() {
-		return opens_detail;
+		return opensDetail;
 	}
 	/**
 	 * @return A list of individual clicks for the message.
 	 */
 	public List<UserActionDetail> getClicksDetail() {
-		return clicks_detail;
+		return clicksDetail;
 	}
 	public List<SMTPEvent> getSmtpEvents() {
-		return smtp_events;
+		return smtpEvents;
 	}
 //	/**
 //	 * @return Any custom metadata provided when the message was sent.

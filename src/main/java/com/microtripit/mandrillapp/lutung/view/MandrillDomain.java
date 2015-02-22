@@ -12,9 +12,9 @@ import java.util.Date;
  */
 public class MandrillDomain {
 	private String domain;
-	private Date created_at, last_tested_at, verified_at;
+	private Date createdAt, lastTestedAt, verifiedAt;
 	private MandrillDomainDetails spf, dkim;
-	private Boolean valid_signing;
+	private Boolean validSigning;
 	
 	/**
 	 * @return The sender domain name.
@@ -27,14 +27,14 @@ public class MandrillDomain {
 	 * was first seen, UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	
 	/**
 	 * @return When the domain's DNS settings were last tested.
 	 */
 	public Date getLastTestedAt() {
-		return last_tested_at;
+		return lastTestedAt;
 	}
 	
 	/**
@@ -42,7 +42,7 @@ public class MandrillDomain {
 	 * when that verification occurred.
 	 */
 	public Date getVerifiedAt() {
-		return verified_at;
+		return verifiedAt;
 	}
 	
 	/**
@@ -66,12 +66,12 @@ public class MandrillDomain {
 	 * verify the domain before using it to authenticate mail.
 	 */
 	public Boolean getValidSigning() {
-		return valid_signing;
+		return validSigning;
 	}
 	
 	public static class MandrillDomainDetails {
 		private Boolean valid;
-		private Date valid_after;
+		private Date validAfter;
 		private String error;
 		
 		/**
@@ -89,7 +89,7 @@ public class MandrillDomain {
 		 * until the record's TTL elapses to start using it.
 		 */
 		public final Date getValid_after() {
-			return valid_after;
+			return validAfter;
 		}
 		/**
 		 * @return An error describing the spf record, or 

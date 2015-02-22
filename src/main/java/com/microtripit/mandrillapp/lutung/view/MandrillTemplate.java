@@ -11,10 +11,10 @@ import java.util.Date;
  * @since Mar 18, 2013
  */
 public class MandrillTemplate {
-	private String name, slug, code, subject, from_email, from_name, text, 
-			publish_name, publish_code, publish_subject, publish_from_email,
-			publish_from_name, publish_text;
-	private Date published_at, created_at, updated_at;
+	private String name, slug, code, subject, fromEmail, fromName, text, 
+			publishName, publishCode, publishSubject, publishFromEmail,
+			publishFromName, publishText;
+	private Date publishedAt, createdAt, updatedAt;
 	
 	/**
 	 * @return The name of the template.
@@ -47,14 +47,14 @@ public class MandrillTemplate {
 	 * if provided &ndash; draft version
 	 */
 	public String getFromEmail() {
-		return from_email;
+		return fromEmail;
 	}
 	/**
 	 * @return The default sender from name for the template, 
 	 * if provided &ndash; draft version
 	 */
 	public String getFromName() {
-		return from_name;
+		return fromName;
 	}
 	/**
 	 * @return The default text part of messages sent with the 
@@ -68,7 +68,7 @@ public class MandrillTemplate {
 	 * kept as a separate field for backwards compatibility
 	 */
 	public String getPublishName() {
-		return publish_name;
+		return publishName;
 	}
 	/**
 	 * @return The full HTML code of the template, with 
@@ -77,32 +77,32 @@ public class MandrillTemplate {
 	 * published.
 	 */
 	public String getPublishCode() {
-		return publish_code;
+		return publishCode;
 	}
 	/**
 	 * @return The subject line of the template, if provided.
 	 */
 	public String getPublishSubject() {
-		return publish_subject;
+		return publishSubject;
 	}
 	/**
 	 * @return The default sender address for the template, if provided.
 	 */
 	public String getPublishFromEmail() {
-		return publish_from_email;
+		return publishFromEmail;
 	}
 	/**
 	 * @return The default sender from name for the template, if provided.
 	 */
 	public String getPublishFromName() {
-		return publish_from_name;
+		return publishFromName;
 	}
 	/**
 	 * @return The default text part of messages sent with the 
 	 * template, if provided. 
 	 */
 	public String getPublishText() {
-		return publish_text;
+		return publishText;
 	}
 	
 	/**
@@ -111,20 +111,20 @@ public class MandrillTemplate {
 	 * been published.
 	 */
 	public Date getPublishedAt() {
-		return published_at;
+		return publishedAt;
 	}
 	/**
 	 * @return The date and time of when this template was 
 	 * created, UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The date and time of when this template was 
 	 * last modified, UTC.
 	 */
 	public Date getUpdatedAt() {
-		return updated_at;
+		return updatedAt;
 	}
 }

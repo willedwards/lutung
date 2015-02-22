@@ -9,7 +9,7 @@ package com.microtripit.mandrillapp.lutung.view;
  * @since Mar 16, 2013
  */
 public class MandrillMessageStatus {
-	private String email, status, reject_reason, _id;
+	private String email, status, rejectReason, _id;
 
 	/**
 	 * @return The email address of the recipient.
@@ -31,13 +31,13 @@ public class MandrillMessageStatus {
 	 * status is 'rejected'.
 	 */
 	public String getRejectReason() {
-		return reject_reason;
+		return rejectReason;
 	}
 
 	/**
 	 * @return The message's unique id.
 	 */
-	public String getId() {
+	public String get_id() {
 		return _id;
 	}
 	

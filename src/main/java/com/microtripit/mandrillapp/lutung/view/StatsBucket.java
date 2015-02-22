@@ -9,8 +9,8 @@ package com.microtripit.mandrillapp.lutung.view;
  * @since Mar 16, 2013
  */
 public class StatsBucket {
-	private Stats today, last_7_days, last_30_days;
-	private Stats last_60_days, last_90_days, all_time;
+	private Stats today, last7Days, last30Days;
+	private Stats last60Days, last90Days, allTime;
 
 	/**
 	 * @return The stats so far for today.
@@ -22,31 +22,31 @@ public class StatsBucket {
 	 * @return The stats for the last 7 days.
 	 */
 	public Stats getLast_7_days() {
-		return last_7_days;
+		return last7Days;
 	}
 	/**
 	 * @return The stats for the last 30 days.
 	 */
 	public Stats getLast_30_days() {
-		return last_30_days;
+		return last30Days;
 	}
 	/**
 	 * @return The stats for the last 60 days.
 	 */
 	public Stats getLast_60_days() {
-		return last_60_days;
+		return last60Days;
 	}
 	/**
 	 * @return The stats for the last 90 days.
 	 */
 	public Stats getLast_90_days() {
-		return last_90_days;
+		return last90Days;
 	}
 	/**
 	 * @return The stats for the whole lifetime.
 	 */
 	public Stats getAll_time() {
-		return all_time;
+		return allTime;
 	}
 
 	/**
@@ -55,9 +55,9 @@ public class StatsBucket {
 	 * @since Mar 16, 2013
 	 */
 	public static class Stats {
-		private Integer sent, hard_bounces, soft_bounces, rejects;
+		private Integer sent, hardBounces, softBounces, rejects;
 		private Integer complaints, unsubs, opens, clicks;
-		private Integer unique_opens, unique_clicks;
+		private Integer uniqueOpens, uniqueClicks;
 
 		/**
 		 * @return The number of emails sent.
@@ -69,13 +69,13 @@ public class StatsBucket {
 		 * @return The number of emails hard bounced.
 		 */
 		public Integer getHardBounces() {
-			return hard_bounces;
+			return hardBounces;
 		}
 		/**
 		 * @return The number of emails soft bounced.
 		 */
 		public Integer getSoftBounces() {
-			return soft_bounces;
+			return softBounces;
 		}
 		/**
 		 * @return The number of emails rejected for sending.
@@ -111,13 +111,13 @@ public class StatsBucket {
 		 * @return The number of unique opens for emails sent.
 		 */
 		public Integer getUniqueOpens() {
-			return unique_opens;
+			return uniqueOpens;
 		}
 		/**
 		 * @return The number of unique clicks for emails sent.
 		 */
 		public Integer getUniqueClicks() {
-			return unique_clicks;
+			return uniqueClicks;
 		}
 	}
 	

@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class MandrillRejectsEntry {
 	private String email, reason, detail;
-	private Date created_at, last_event_at, expires_at;
+	private Date createdAt, lastEventAt, expiresAt;
 	private Boolean expired;
 	private MandrillSender sender;
 	
@@ -40,21 +40,21 @@ public class MandrillRejectsEntry {
 	 * blacklist, UTC.
 	 */
 	public Date getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 	/**
 	 * @return The time of the most recent event 
 	 * that either created or renewed this rejection.
 	 */
 	public Date getLastEventAt() {
-		return last_event_at;
+		return lastEventAt;
 	}
 	/**
 	 * @return When this blacklist entry will 
 	 * expire (this may be in the past), UTC.
 	 */
 	public Date getExpiresAt() {
-		return expires_at;
+		return expiresAt;
 	}
 	/**
 	 * @return Whether the blacklist entry has expired.

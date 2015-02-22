@@ -3,7 +3,10 @@
  */
 package com.microtripit.mandrillapp.lutung.model;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 /**
  * @author rschreijer
@@ -81,10 +84,12 @@ public class MandrillApiError extends Exception {
 	 */
 	public final String getMandrillErrorAsJson() {
 		if(error != null) {
-			final Gson gson = LutungGsonUtils.createGsonBuilder()
-					.setPrettyPrinting().create();
-			return gson.toJson(error);
-			
+			ObjectMapper mapper = new ObjectMapper();
+			try {
+				return mapper.writeValueAsString(error);
+			} catch (JsonProcessingException e) {
+				return "{message:problem while serializing MandrillError "+error+"}";
+			}
 		} else {
 			return "{}";
 			

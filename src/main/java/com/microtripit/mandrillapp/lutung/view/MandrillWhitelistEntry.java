@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class MandrillWhitelistEntry {
 	private String email, detail;
-	private Date created_at;
+	private Date createdAt;
 	
 	/**
 	 * @return The email that is whitelisted.
@@ -30,7 +30,7 @@ public class MandrillWhitelistEntry {
 	 * @return When the email was added to the whitelist.
 	 */
 	public Date getCreated_at() {
-		return created_at;
+		return createdAt;
 	}
 
 }
